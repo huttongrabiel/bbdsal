@@ -1,7 +1,3 @@
-use topic_select::TOPIC_COUNT;
-
-mod topic_select;
-
 pub struct Config {
     pub amount_of_dsa: u32,
 }

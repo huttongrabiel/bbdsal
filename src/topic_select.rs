@@ -1,4 +1,5 @@
 use crate::Config;
+use crate::boilerplate_gen;
 use rand::distributions::{Distribution, Standard};
 use rand::Rng;
 
@@ -31,7 +32,10 @@ pub enum DSATopic {
 impl Distribution<DSATopic> for Standard {
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> DSATopic {
         match rng.gen_range(1..=TOPIC_COUNT) {
-            1 => DSATopic::LinkedList(todo!()),
+            1 => {
+                let bp_code = boilerplate_gen::linked_list_bp();
+                DSATopic::LinkedList(bp_code)
+            },
             2 => DSATopic::DoublyLinkedList(todo!()),
             3 => DSATopic::Tree(todo!()),
             4 => DSATopic::BinaryTree(todo!()),
