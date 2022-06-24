@@ -1,3 +1,19 @@
+use topic_select::TOPIC_COUNT;
+
+mod topic_select;
+
+pub struct Config {
+    pub amount_of_dsa: u32,
+}
+
+impl Config {
+    pub fn new(amount_of_dsa: u32) -> Self {
+        Self {
+            amount_of_dsa,
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
