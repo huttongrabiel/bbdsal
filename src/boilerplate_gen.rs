@@ -1,12 +1,13 @@
 use super::topic_select::StudyTopics;
 use super::topic_select::DSATopic;
 
+// By the time this function gets called, all files and directories should
+// already be generated and all we need to do it write to them.
 pub fn generate_boiler_plate(study_topics: StudyTopics) {
     for topic in study_topics.dsa_selection {
         match topic {
             DSATopic::LinkedList => {
-                let linked_list_bp = linked_list_bp();
-                println!("{}", linked_list_bp);
+                let _linked_list_bp = linked_list_bp();
  			},
             DSATopic::DoublyLinkedList => {
  			},

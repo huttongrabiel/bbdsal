@@ -1,3 +1,5 @@
+use core::fmt;
+
 use crate::Config;
 use rand::distributions::{Distribution, Standard};
 use rand::Rng;
@@ -26,6 +28,12 @@ pub enum DSATopic {
     Vector,
     Queue,
     Stack,
+}
+
+impl fmt::Display for DSATopic {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
 }
 
 impl Distribution<DSATopic> for Standard {

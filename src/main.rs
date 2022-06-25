@@ -1,13 +1,17 @@
 mod lib;
 mod topic_select;
 mod boilerplate_gen;
+mod file_create;
 
+use file_create::generate_file_structure;
 use topic_select::TOPIC_COUNT;
 use lib::Config;
 use std::io;
+use std::error::Error;
 
-pub fn main() {
+pub fn main() -> Result<(), Box<dyn Error>> {
     run();
+    Ok(())
 }
 
 fn run() {
@@ -16,6 +20,11 @@ fn run() {
     let config = Config::new(user_input);
 
     let topics = topic_select::generate_study_topics(&config);
+
+    match generate_file_structure(&topics.dsa_selection) {
+        Ok(_) => (),
+        Err(e) => panic!("{}", e),
+    };
 
     boilerplate_gen::generate_boiler_plate(topics);
 }
