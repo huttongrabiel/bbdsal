@@ -1,7 +1,55 @@
+use super::topic_select::StudyTopics;
+use super::topic_select::DSATopic;
+
+pub fn generate_boiler_plate(study_topics: StudyTopics) {
+    for topic in study_topics.dsa_selection {
+        match topic {
+            DSATopic::LinkedList => {
+                let linked_list_bp = linked_list_bp();
+                println!("{}", linked_list_bp);
+ 			},
+            DSATopic::DoublyLinkedList => {
+ 			},
+            DSATopic::Tree => {
+ 			},
+            DSATopic::BinaryTree => {
+ 			},
+            DSATopic::InOrderTreeTraversal => {
+ 			},
+            DSATopic::PreOrderTreeTraversal => {
+ 			},
+            DSATopic::PostOrderTreeTraversal => {
+ 			},
+            DSATopic::BFS => {
+ 			},
+            DSATopic::DFS => {
+ 			},
+            DSATopic::QuickSort => {
+ 			},
+            DSATopic::MergeSort => {
+ 			},
+            DSATopic::InsertionSort => {
+ 			},
+            DSATopic::BinarySearch => {
+ 			},
+            DSATopic::LinearSearch => {
+ 			},
+            DSATopic::Array => {
+ 			},
+            DSATopic::Vector => {
+ 			},
+            DSATopic::Queue => {
+ 			},
+            DSATopic::Stack => {
+ 			},
+        }
+    }
+}
+
 // Each of these output boilerplate C++ code.
 
 // TODO: Actually check this code...
-pub fn linked_list_bp() -> String {
+fn linked_list_bp() -> String {
     let mut output = String::new();
 
     output.push_str("struct Node {\n");
