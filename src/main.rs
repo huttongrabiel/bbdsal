@@ -3,7 +3,7 @@ mod topic_select;
 mod boilerplate_gen;
 mod file_create;
 
-use file_create::generate_file_structure;
+use file_create::generate_practice_files;
 use topic_select::TOPIC_COUNT;
 use lib::Config;
 use std::io;
@@ -21,12 +21,10 @@ fn run() {
 
     let topics = topic_select::generate_study_topics(&config);
 
-    match generate_file_structure(&topics.dsa_selection) {
+    match generate_practice_files(&topics.dsa_selection) {
         Ok(_) => (),
         Err(e) => panic!("{}", e),
     };
-
-    boilerplate_gen::generate_boiler_plate(topics);
 }
 
 fn get_user_input() -> u32 {

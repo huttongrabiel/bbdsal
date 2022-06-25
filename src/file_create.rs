@@ -1,7 +1,8 @@
 use std::{fs, path::Path};
 use crate::topic_select::DSATopic;
+use crate::boilerplate_gen;
 
-pub fn generate_file_structure(topics: &Vec<DSATopic>)
+pub fn generate_practice_files(topics: &Vec<DSATopic>)
 -> Result<(), &'static str> {
     if !Path::exists(Path::new("./.history")) {
         create_history_file();
@@ -58,7 +59,8 @@ fn create_practice_files(
     dir_path: String
 ) -> Result<(), &'static str> {
     for topic in topics {
-        match fs::write(format!("{}/{}.cpp", dir_path, topic), "") {
+        let content = boilerplate_gen::generate_boiler_plate(topic);
+        match fs::write(format!("{}/{}.cpp", dir_path, topic), content) {
             Ok(_) => (),
             Err(_) => return Err("Failed to create practice files for topics."),
         }
