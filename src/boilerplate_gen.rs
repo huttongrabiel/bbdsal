@@ -67,6 +67,7 @@ pub fn generate_boiler_plate(topic: &DSATopic) -> String {
 fn linked_list_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
     output.push_str("struct Node {\n");
     output.push_str("};\n\n");
 
@@ -87,6 +88,7 @@ fn linked_list_bp() -> String {
 fn doubly_linked_list_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
     output.push_str("struct Node {\n");
     output.push_str("};\n\n");
 
@@ -107,11 +109,15 @@ fn doubly_linked_list_bp() -> String {
 fn tree_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
+
     output
 }
 
 fn binary_tree_bp() -> String {
     let mut output = String::new();
+
+    output.push_str("#include <stdio.h>\n\n");
 
     output
 }
@@ -119,11 +125,15 @@ fn binary_tree_bp() -> String {
 fn inorder_tree_traversal_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
+
     output
 }
 
 fn preorder_tree_traversal_bp() -> String {
     let mut output = String::new();
+
+    output.push_str("#include <stdio.h>\n\n");
 
     output
 }
@@ -131,11 +141,15 @@ fn preorder_tree_traversal_bp() -> String {
 fn postorder_tree_traversal_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
+
     output
 }
 
 fn bfs_bp() -> String {
     let mut output = String::new();
+
+    output.push_str("#include <stdio.h>\n\n");
 
     output
 }
@@ -143,11 +157,15 @@ fn bfs_bp() -> String {
 fn dfs_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
+
     output
 }
 
 fn quick_sort_bp() -> String {
     let mut output = String::new();
+
+    output.push_str("#include <stdio.h>\n\n");
 
     output
 }
@@ -155,11 +173,15 @@ fn quick_sort_bp() -> String {
 fn merge_sort_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
+
     output
 }
 
 fn insertion_sort_bp() -> String {
     let mut output = String::new();
+
+    output.push_str("#include <stdio.h>\n\n");
 
     output
 }
@@ -167,11 +189,15 @@ fn insertion_sort_bp() -> String {
 fn binary_search_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
+
     output
 }
 
 fn linear_search_bp() -> String {
     let mut output = String::new();
+
+    output.push_str("#include <stdio.h>\n\n");
 
     output
 }
@@ -179,11 +205,15 @@ fn linear_search_bp() -> String {
 fn array_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
+
     output
 }
 
 fn vector_bp() -> String {
     let mut output = String::new();
+
+    output.push_str("#include <stdio.h>\n\n");
 
     output
 }
@@ -191,11 +221,15 @@ fn vector_bp() -> String {
 fn queue_bp() -> String {
     let mut output = String::new();
 
+    output.push_str("#include <stdio.h>\n\n");
+
     output
 }
 
 fn stack_bp() -> String {
     let mut output = String::new();
+
+    output.push_str("#include <stdio.h>\n\n");
 
     output
 }
