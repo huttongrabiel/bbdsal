@@ -68,16 +68,16 @@ fn linked_list_bp() -> String {
     let mut output = String::new();
 
     output.push_str("struct Node {\n");
-
-    output.push_str("int len() {\n}\n");
-    output.push_str("void insert(Node* n) {\n}\n");
-    output.push_str("void erase() {\n}\n");
-    // TODO: Double check that front returns a pointer to a Node
-    output.push_str("Node* front() {\n}\n");
-    output.push_str("void print() {\n}\n");
-    output.push_str("Node* reverse() {\n}\n");
-
     output.push_str("};\n");
+
+    output.push_str("int len(struct Node* head) {\n}\n");
+    output.push_str("void append(struct Node* head, struct Node* n) {\n}\n");
+    output.push_str("void erase() {\n}\n");
+    output.push_str("struct Node* front(struct Node* head) {\n}\n");
+    output.push_str("void print(struct Node* head) {\n}\n");
+    output.push_str("struct Node* reverse(struct Node* head) {\n}\n");
+
+    output.push_str("int main() {\n    return 0;\n}");
 
     output
 }
@@ -86,16 +86,16 @@ fn doubly_linked_list_bp() -> String {
     let mut output = String::new();
 
     output.push_str("struct Node {\n");
-
-    output.push_str("int len() {\n}\n");
-    output.push_str("void insert(Node* n) {\n}\n");
-    output.push_str("void erase() {\n}\n");
-    // TODO: Double check that front returns a pointer to a Node
-    output.push_str("Node* front() {\n}\n");
-    output.push_str("void print() {\n}\n");
-    output.push_str("Node* reverse() {\n}\n");
-
     output.push_str("};\n");
+
+    output.push_str("int len(struct Node& head) {\n}\n");
+    output.push_str("void append(structNode* head, struct Node* n) {\n}\n");
+    output.push_str("void erase() {\n}\n");
+    output.push_str("struct Node* front(struct Node* head) {\n}\n");
+    output.push_str("void print(struct Node* head) {\n}\n");
+    output.push_str("struct Node* reverse(struct Node* head) {\n}\n");
+
+    output.push_str("int main() {\n    return 0;\n}");
 
     output
 }

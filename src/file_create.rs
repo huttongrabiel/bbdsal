@@ -60,7 +60,7 @@ fn create_practice_files(
 ) -> Result<(), &'static str> {
     for topic in topics {
         let content = boilerplate_gen::generate_boiler_plate(topic);
-        match fs::write(format!("{}/{}.cpp", dir_path, topic), content) {
+        match fs::write(format!("{}/{}.c", dir_path, topic), content) {
             Ok(_) => (),
             Err(_) => return Err("Failed to create practice files for topics."),
         }
