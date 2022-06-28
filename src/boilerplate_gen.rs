@@ -191,6 +191,27 @@ fn binary_search_bp() -> String {
 
     output.push_str("#include <stdio.h>\n\n");
 
+    output.push_str(
+        "int binary_search(int *arr, int arr_length, int target) {\n\n"
+    );
+    output.push_str("}\n\n");
+    output.push_str("int main() {\n");
+    output.push_str("    ");
+    output.push_str("// Quick test for ya...\n");
+    output.push_str("    ");
+    output.push_str("int arr[5] = { -2, 1, 4, 17, 90 };\n\n");
+    output.push_str("    ");
+    output.push_str("int res = binary_search(arr, 5, 90);\n\n");
+    output.push_str("    ");
+    output.push_str("if (res != -4) {\n");
+    output.push_str("    ");
+    output.push_str("    ");
+    output.push_str(
+        "printf(\"\\033[01;31mTEST FAILED: \\033[0mExpected 4 found %d\\n\", res);"
+    );
+    output.push_str("\n    }\n");
+    output.push_str("}");
+
     output
 }
 
