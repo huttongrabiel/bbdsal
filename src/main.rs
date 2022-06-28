@@ -43,6 +43,8 @@ fn get_user_input() -> u32 {
         match user_input.trim().parse::<u32>() {
             Ok(num) => {
                 if num < 1 || num > TOPIC_COUNT {
+                    // Have to clear because read_line appends to buffer
+                    user_input.clear();
                     continue;
                 }
                 return num;
