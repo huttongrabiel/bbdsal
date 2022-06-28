@@ -4,9 +4,7 @@ pub struct Config {
 
 impl Config {
     pub fn new(amount_of_dsa: u32) -> Self {
-        Self {
-            amount_of_dsa,
-        }
+        Self { amount_of_dsa }
     }
 }
 

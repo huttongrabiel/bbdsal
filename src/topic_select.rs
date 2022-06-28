@@ -78,7 +78,5 @@ pub fn generate_study_topics(config: &Config) -> StudyTopics {
 
     dbg!(&dsa_selection);
 
-    StudyTopics {
-        dsa_selection,
-    }
+    StudyTopics { dsa_selection }
 }

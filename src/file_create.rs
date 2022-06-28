@@ -1,9 +1,10 @@
-use std::{fs, path::Path};
-use crate::topic_select::DSATopic;
 use crate::boilerplate_gen;
+use crate::topic_select::DSATopic;
+use std::{fs, path::Path};
 
-pub fn generate_practice_files(topics: &Vec<DSATopic>)
--> Result<(), &'static str> {
+pub fn generate_practice_files(
+    topics: &Vec<DSATopic>,
+) -> Result<(), &'static str> {
     if !Path::exists(Path::new("./.history")) {
         create_history_file();
     } else {
@@ -39,7 +40,7 @@ fn create_practice_dir() -> Result<String, &'static str> {
 }
 
 fn create_practice_sub_dir(
-    parent_path: &String
+    parent_path: &String,
 ) -> Result<String, &'static str> {
     let number = history_file_number();
     let path = format!("{}/practice{}", parent_path, number);
@@ -56,13 +57,15 @@ fn create_practice_sub_dir(
 
 fn create_practice_files(
     topics: &Vec<DSATopic>,
-    dir_path: String
+    dir_path: String,
 ) -> Result<(), &'static str> {
     for topic in topics {
         let content = boilerplate_gen::generate_boiler_plate(topic);
         match fs::write(format!("{}/{}.c", dir_path, topic), content) {
             Ok(_) => (),
-            Err(_) => return Err("Failed to create practice files for topics."),
+            Err(_) => {
+                return Err("Failed to create practice files for topics.")
+            }
         }
     }
     Ok(())
@@ -78,8 +81,8 @@ fn create_history_file() {
 }
 
 fn history_file_number() -> u32 {
-    let number = fs::read_to_string("./.history")
-        .expect("Unable to read .history file");
+    let number =
+        fs::read_to_string("./.history").expect("Unable to read .history file");
 
     let number: Vec<&str> = number
         .lines()
@@ -100,7 +103,6 @@ fn update_history_file() {
         Err(_) => panic!("Could not update .history file!"),
     }
 }
-
 
 #[cfg(test)]
 mod tests {

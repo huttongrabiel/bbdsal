@@ -1,13 +1,13 @@
-mod lib;
-mod topic_select;
 mod boilerplate_gen;
 mod file_create;
+mod lib;
+mod topic_select;
 
 use file_create::generate_practice_files;
-use topic_select::TOPIC_COUNT;
 use lib::Config;
-use std::io;
 use std::error::Error;
+use std::io;
+use topic_select::TOPIC_COUNT;
 
 pub fn main() -> Result<(), Box<dyn Error>> {
     run();
@@ -48,11 +48,11 @@ fn get_user_input() -> u32 {
                     continue;
                 }
                 return num;
-            },
+            }
             Err(_) => {
                 user_input.clear();
-                continue
-            },
+                continue;
+            }
         };
     }
 }

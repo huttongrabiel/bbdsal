@@ -4,60 +4,24 @@ use super::topic_select::DSATopic;
 // already be generated and all we need to do it write to them.
 pub fn generate_boiler_plate(topic: &DSATopic) -> String {
     match topic {
-        DSATopic::LinkedList => {
-            linked_list_bp()
-        },
-        DSATopic::DoublyLinkedList => {
-            doubly_linked_list_bp()
-        },
-        DSATopic::Tree => {
-            tree_bp()
-        },
-        DSATopic::BinaryTree => {
-            binary_tree_bp()
-        },
-        DSATopic::InOrderTreeTraversal => {
-            inorder_tree_traversal_bp()
-        },
-        DSATopic::PreOrderTreeTraversal => {
-            preorder_tree_traversal_bp()
-        },
-        DSATopic::PostOrderTreeTraversal => {
-            postorder_tree_traversal_bp()
-        },
-        DSATopic::BFS => {
-            bfs_bp()
-        },
-        DSATopic::DFS => {
-            dfs_bp()
-        },
-        DSATopic::QuickSort => {
-            quick_sort_bp()
-        },
-        DSATopic::MergeSort => {
-            merge_sort_bp()
-        },
-        DSATopic::InsertionSort => {
-            insertion_sort_bp()
-        },
-        DSATopic::BinarySearch => {
-            binary_search_bp()
-        },
-        DSATopic::LinearSearch => {
-            linear_search_bp()
-        },
-        DSATopic::Array => {
-            array_bp()
-        },
-        DSATopic::Vector => {
-            vector_bp()
-        },
-        DSATopic::Queue => {
-            queue_bp()
-        },
-        DSATopic::Stack => {
-            stack_bp()
-        },
+        DSATopic::LinkedList => linked_list_bp(),
+        DSATopic::DoublyLinkedList => doubly_linked_list_bp(),
+        DSATopic::Tree => tree_bp(),
+        DSATopic::BinaryTree => binary_tree_bp(),
+        DSATopic::InOrderTreeTraversal => inorder_tree_traversal_bp(),
+        DSATopic::PreOrderTreeTraversal => preorder_tree_traversal_bp(),
+        DSATopic::PostOrderTreeTraversal => postorder_tree_traversal_bp(),
+        DSATopic::BFS => bfs_bp(),
+        DSATopic::DFS => dfs_bp(),
+        DSATopic::QuickSort => quick_sort_bp(),
+        DSATopic::MergeSort => merge_sort_bp(),
+        DSATopic::InsertionSort => insertion_sort_bp(),
+        DSATopic::BinarySearch => binary_search_bp(),
+        DSATopic::LinearSearch => linear_search_bp(),
+        DSATopic::Array => array_bp(),
+        DSATopic::Vector => vector_bp(),
+        DSATopic::Queue => queue_bp(),
+        DSATopic::Stack => stack_bp(),
     }
 }
 
@@ -74,7 +38,7 @@ fn linked_list_bp() -> String {
     output.push_str("int len(struct Node* head) {\n}\n\n");
     output.push_str("void append(struct Node* head, struct Node* n) {\n}\n\n");
     output.push_str(
-        "void insert(struct Node* head, struct Node* n, int pos) {\n}\n\n"
+        "void insert(struct Node* head, struct Node* n, int pos) {\n}\n\n",
     );
     output.push_str("void erase(struct Node* head, int pos) {\n}\n\n");
     output.push_str("void print(struct Node* head) {\n}\n\n");
@@ -95,7 +59,7 @@ fn doubly_linked_list_bp() -> String {
     output.push_str("int len(struct Node* head) {\n}\n\n");
     output.push_str("void append(struct Node* head, struct Node* n) {\n}\n\n");
     output.push_str(
-        "void insert(struct Node* head, struct Node* n, int pos) {\n}\n\n"
+        "void insert(struct Node* head, struct Node* n, int pos) {\n}\n\n",
     );
     output.push_str("void erase(struct Node* head, int pos) {\n}\n\n");
     output.push_str("void print(struct Node* head) {\n}\n\n");
@@ -192,7 +156,7 @@ fn binary_search_bp() -> String {
     output.push_str("#include <stdio.h>\n\n");
 
     output.push_str(
-        "int binary_search(int *arr, int arr_length, int target) {\n\n"
+        "int binary_search(int *arr, int arr_length, int target) {\n\n",
     );
     output.push_str("}\n\n");
     output.push_str("int main() {\n");
