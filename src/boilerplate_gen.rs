@@ -82,6 +82,38 @@ fn binary_tree_bp() -> String {
     let mut output = String::new();
 
     output.push_str("#include <stdio.h>\n\n");
+    output.push_str("struct Node {\n\n");
+    output.push_str("};\n\n");
+    output.push_str("struct Node* create_node(int value) {\n\n");
+    output.push_str("}\n\n");
+
+    output.push_str(
+        "struct Node* insert_left(struct Node* node, int value) {\n\n",
+    );
+    output.push_str("}\n\n");
+
+    output.push_str(
+        "struct Node* insert_right(struct Node* node, int value) {\n\n",
+    );
+    output.push_str("}\n\n");
+
+    output.push_str("void inorder_traversal(struct Node* node) {\n\n");
+    output.push_str("}\n\n");
+
+    output.push_str("void preorder_traversal(struct Node* node) {\n\n");
+    output.push_str("}\n\n");
+
+    output.push_str("void postorder_traversal(struct Node* node) {\n\n");
+    output.push_str("}\n\n");
+
+    output.push_str("int main() {\n");
+    output.push_str("    ");
+    output.push_str("struct Node* root = create_node(8);\n");
+    output.push_str("    ");
+    output.push_str("insert_left(root, 4);\n");
+    output.push_str("    ");
+    output.push_str("insert_right(root, 6);\n");
+    output.push_str("}\n");
 
     output
 }
