@@ -1,7 +1,13 @@
 use super::topic_select::DSATopic;
 
-// By the time this function gets called, all files and directories should
-// already be generated and all we need to do it write to them.
+/// Writes C code for the given data structure/algorithm.
+///
+/// # Examples
+///
+/// fn main() {
+///     let topic = DSATopic::LinkedList;
+///     generate_boiler_plate(&topic);
+/// }
 pub fn generate_boiler_plate(topic: &DSATopic) -> String {
     match topic {
         DSATopic::LinkedList => linked_list_bp(),
@@ -25,9 +31,6 @@ pub fn generate_boiler_plate(topic: &DSATopic) -> String {
     }
 }
 
-// Each of these output boilerplate C++ code.
-
-// TODO: Actually check this code...
 fn linked_list_bp() -> String {
     let mut output = String::new();
 
@@ -81,7 +84,9 @@ fn tree_bp() -> String {
 fn binary_tree_bp() -> String {
     let mut output = String::new();
 
-    output.push_str("#include <stdio.h>\n\n");
+    output.push_str("#include <stdio.h>\n");
+    output.push_str("#include <stdlib.h>\n\n");
+
     output.push_str("struct Node {\n\n");
     output.push_str("};\n\n");
     output.push_str("struct Node* create_node(int value) {\n\n");
@@ -106,6 +111,19 @@ fn binary_tree_bp() -> String {
     output.push_str("void postorder_traversal(struct Node* node) {\n\n");
     output.push_str("}\n\n");
 
+    output.push_str(
+        "\
+void free_tree(struct Node* root) {
+    if (root != NULL) {
+        free_tree(root->left);
+        free_tree(root->right);
+        free(root);
+    }
+}
+
+",
+    );
+
     output.push_str("int main() {\n");
     output.push_str("    ");
     output.push_str("struct Node* root = create_node(8);\n");
@@ -113,6 +131,8 @@ fn binary_tree_bp() -> String {
     output.push_str("insert_left(root, 4);\n");
     output.push_str("    ");
     output.push_str("insert_right(root, 6);\n");
+    output.push_str("    ");
+    output.push_str("free_tree(root);\n");
     output.push_str("}\n");
 
     output
@@ -161,7 +181,38 @@ fn dfs_bp() -> String {
 fn quick_sort_bp() -> String {
     let mut output = String::new();
 
-    output.push_str("#include <stdio.h>\n\n");
+    output.push_str("#include <stdio.h>\n");
+    output.push_str("#include <stdlib.h>\n\n");
+
+    output.push_str(
+        "\
+int partition(int **arr, int low, int high) {
+
+}
+
+void quick_sort(int **arr, int low, int high) {
+
+}
+
+int main() {
+    int const arr_size = 4;
+    int *arr = malloc(arr_size * sizeof(int));
+
+    arr[0] = 5;
+    arr[1] = 2;
+    arr[2] = -1;
+    arr[3] = 4;
+
+    quick_sort(&arr, 0, arr_size-1);
+
+    for (int i = 0; i < arr_size; i++) {
+        printf(\"%d\\n\", arr[i]);
+    }
+
+    free(arr);
+}
+                    ",
+    );
 
     output
 }
