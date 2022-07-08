@@ -5,7 +5,7 @@ use rand::distributions::{Distribution, Standard};
 use rand::Rng;
 
 // Update this as you add more DSA topics to DSATopics
-pub const TOPIC_COUNT: u32 = 18;
+pub const TOPIC_COUNT: u32 = 19;
 
 #[derive(PartialEq, Debug)]
 pub enum DSATopic {
@@ -14,6 +14,7 @@ pub enum DSATopic {
     DoublyLinkedList,
     Tree,
     BinaryTree,
+    BinarySearchTree,
     InOrderTreeTraversal,
     PreOrderTreeTraversal,
     PostOrderTreeTraversal,
@@ -43,20 +44,21 @@ impl Distribution<DSATopic> for Standard {
             2 => DSATopic::DoublyLinkedList,
             3 => DSATopic::Tree,
             4 => DSATopic::BinaryTree,
-            5 => DSATopic::InOrderTreeTraversal,
-            6 => DSATopic::PreOrderTreeTraversal,
-            7 => DSATopic::PostOrderTreeTraversal,
-            8 => DSATopic::BFS,
-            9 => DSATopic::DFS,
-            10 => DSATopic::QuickSort,
-            11 => DSATopic::MergeSort,
-            12 => DSATopic::InsertionSort,
-            13 => DSATopic::BinarySearch,
-            14 => DSATopic::LinearSearch,
-            15 => DSATopic::Array,
-            16 => DSATopic::Vector,
-            17 => DSATopic::Queue,
-            18 => DSATopic::Stack,
+            5 => DSATopic::BinarySearchTree,
+            6 => DSATopic::InOrderTreeTraversal,
+            7 => DSATopic::PreOrderTreeTraversal,
+            8 => DSATopic::PostOrderTreeTraversal,
+            9 => DSATopic::BFS,
+            10 => DSATopic::DFS,
+            11 => DSATopic::QuickSort,
+            12 => DSATopic::MergeSort,
+            13 => DSATopic::InsertionSort,
+            14 => DSATopic::BinarySearch,
+            15 => DSATopic::LinearSearch,
+            16 => DSATopic::Array,
+            17 => DSATopic::Vector,
+            18 => DSATopic::Queue,
+            19 => DSATopic::Stack,
             _ => panic!("Rand picked some wack number"),
         }
     }

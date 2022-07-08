@@ -14,6 +14,7 @@ pub fn generate_boiler_plate(topic: &DSATopic) -> String {
         DSATopic::DoublyLinkedList => doubly_linked_list_bp(),
         DSATopic::Tree => tree_bp(),
         DSATopic::BinaryTree => binary_tree_bp(),
+        DSATopic::BinarySearchTree => binary_search_tree_bp(),
         DSATopic::InOrderTreeTraversal => inorder_tree_traversal_bp(),
         DSATopic::PreOrderTreeTraversal => preorder_tree_traversal_bp(),
         DSATopic::PostOrderTreeTraversal => postorder_tree_traversal_bp(),
@@ -134,6 +135,41 @@ void free_tree(struct Node* root) {
     output.push_str("    ");
     output.push_str("free_tree(root);\n");
     output.push_str("}\n");
+
+    output
+}
+
+fn binary_search_tree_bp() -> String {
+    let mut output = String::new();
+
+    output.push_str(
+        "\
+struct Node {
+
+};
+
+struct Node* insert_node(struct Node* root, struct Node* node) {
+
+}
+
+struct Node* maximum(struct Node* root) {
+
+}
+
+struct Node* minimum(struct Node* root) {
+
+}
+
+void inorder_traversal(struct Node* root) {
+    // Due to the structure of a binary search tree, an inorder
+    // will print the elements in sorted order.
+}
+
+int main() {
+    return 0;
+}\
+        ",
+    );
 
     output
 }
