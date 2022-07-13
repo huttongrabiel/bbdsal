@@ -264,7 +264,37 @@ fn merge_sort_bp() -> String {
 fn insertion_sort_bp() -> String {
     let mut output = String::new();
 
-    output.push_str("#include <stdio.h>\n\n");
+    output.push_str(
+        "\
+#include <stdio.h>
+#include <stdlib.h>
+
+int* insertion_sort(int arr[], int arr_len) {
+    int* sorted = malloc(sizeof(int) * arr_len);
+
+    return sorted;
+}
+
+int main() {
+    int arr[5] = { -2, 7, 19, 4, 1 };
+
+    int arr_len = 5;
+
+    int* sorted_arr = insertion_sort(arr, arr_len);
+
+    for (int i = 0; i < arr_len-1; i++) {
+        if (sorted_arr[i+1] < sorted_arr[i]) {
+            printf(\"\\033[01;31mTest Failed: \\033[0mArray not sorted\");
+            break;
+        }
+    }
+
+    free(sorted_arr);
+
+    return 0;
+}
+        ",
+    );
 
     output
 }
