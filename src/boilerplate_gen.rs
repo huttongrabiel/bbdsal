@@ -275,7 +275,14 @@ int* insertion_sort(int arr[], int arr_len) {
     return sorted;
 }
 
+// Try and do this one, it's less expensive.
+void inplace_insertion_sort(int* arr, int arr_len) {
+
+}
+
 int main() {
+    // Copy insertion sort
+
     int arr[5] = { -2, 7, 19, 4, 1 };
 
     int arr_len = 5;
@@ -285,10 +292,30 @@ int main() {
     for (int i = 0; i < arr_len-1; i++) {
         if (sorted_arr[i+1] < sorted_arr[i]) {
             printf(\"\\033[01;31mTest Failed: \\033[0mArray not sorted\");
-            break;
+            return 1;
         }
     }
 
+    // In place insertion sort
+
+    int* arr2 = malloc(sizeof(int) * 5);
+
+    for (int i = 0; i < arr_len; i++) {
+        arr2[i] = arr[i];
+    }
+
+    inplace_insertion_sort(arr2, 5);
+
+    for (int i = 0; i < arr_len-1; i++) {
+        if (arr2[i+1] < arr2[i]) {
+            printf(\"\\033[01;31mIn Place Test Failed: \\033[0mArray not sorted\");
+            return 1;
+        }
+    }
+
+    printf(\"\\033[01;32mAll tests pass!\\033[0m\");
+
+    free(arr2);
     free(sorted_arr);
 
     return 0;
