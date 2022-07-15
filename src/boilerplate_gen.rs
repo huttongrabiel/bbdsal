@@ -291,7 +291,7 @@ int main() {
 
     for (int i = 0; i < arr_len-1; i++) {
         if (sorted_arr[i+1] < sorted_arr[i]) {
-            printf(\"\\033[01;31mTest Failed: \\033[0mArray not sorted\");
+            fprintf(stderr, \"\\033[01;31mTest Failed: \\033[0mArray not sorted\");
             return 1;
         }
     }
@@ -308,7 +308,7 @@ int main() {
 
     for (int i = 0; i < arr_len-1; i++) {
         if (arr2[i+1] < arr2[i]) {
-            printf(\"\\033[01;31mIn Place Test Failed: \\033[0mArray not sorted\");
+            fprintf(stderr, \"\\033[01;31mIn Place Test Failed: \\033[0mArray not sorted\");
             return 1;
         }
     }
@@ -347,9 +347,14 @@ fn binary_search_bp() -> String {
     output.push_str("    ");
     output.push_str("    ");
     output.push_str(
-        "printf(\"\\033[01;31mTEST FAILED: \\033[0mExpected 4 found %d\\n\", res);"
+        "fprintf(stderr, \"\\033[01;31mTEST FAILED: \\033[0mExpected 4 found %d\\n\", res);"
     );
+    output.push_str("\n        return 1;");
     output.push_str("\n    }\n");
+    output.push_str(
+        "    printf(\"\\033[01;32mTest Passed: \\033[0mArray sorted!\");",
+    );
+    output.push_str("\n    return 0;\n");
     output.push_str("}");
 
     output
