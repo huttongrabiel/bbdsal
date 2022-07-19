@@ -363,7 +363,56 @@ fn binary_search_bp() -> String {
 fn linear_search_bp() -> String {
     let mut output = String::new();
 
-    output.push_str("#include <stdio.h>\n\n");
+    output.push_str("#include <stdio.h>\n");
+
+    output.push_str(
+        "\
+#include <stdlib.h>
+
+int linear_search(int* arr, int arr_len, int target) {
+    // Return index if found, otherwise return -1.
+}
+
+int main() {
+    // Tests
+
+    int* arr = malloc(sizeof(int) * 5);
+
+    arr[0] = 5;
+    arr[1] = 7;
+    arr[2] = -2;
+    arr[3] = 1;
+    arr[4] = 18;
+
+    // Should return index 1.
+    int search1 = linear_search(arr, 5, 7);
+
+    if (search1 != 1) {
+        fprintf(
+            stderr,
+            \"\\033[01;31mTest Failed: \\033[0mIncorrect index for search1.\"
+        );
+        return -1;
+    }
+
+    // Should return -1.
+    int search2 = linear_search(arr, 5, 80);
+
+    if (search2 != -1) {
+        fprintf(
+            stderr,
+            \"\\033[01;31mTest Failed: \\033[0mIncorrect index for search2.\"
+        );
+        return -1;
+    }
+
+    printf(\"\\033[01;32mAll tests pass!\\033[0m\");
+
+    free(arr);
+
+    return 0;
+}",
+    );
 
     output
 }
