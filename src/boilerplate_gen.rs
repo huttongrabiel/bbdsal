@@ -222,24 +222,24 @@ fn quick_sort_bp() -> String {
 
     output.push_str(
         "\
-int partition(int **arr, int low, int high) {
+int partition(int* arr, int low, int high) {
 
 }
 
-void quick_sort(int **arr, int low, int high) {
+void quick_sort(int* arr, int low, int high) {
 
 }
 
 int main() {
     int const arr_size = 4;
-    int *arr = malloc(arr_size * sizeof(int));
+    int* arr = malloc(arr_size * sizeof(int));
 
     arr[0] = 5;
     arr[1] = 2;
     arr[2] = -1;
     arr[3] = 4;
 
-    quick_sort(&arr, 0, arr_size-1);
+    quick_sort(arr, 0, arr_size-1);
 
     for (int i = 0; i < arr_size; i++) {
         printf(\"%d\\n\", arr[i]);
