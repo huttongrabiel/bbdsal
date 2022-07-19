@@ -332,7 +332,7 @@ fn binary_search_bp() -> String {
     output.push_str("#include <stdio.h>\n\n");
 
     output.push_str(
-        "int binary_search(int *arr, int arr_length, int target) {\n\n",
+        "int binary_search(int *arr, int low, int high, int target) {\n\n",
     );
     output.push_str("}\n\n");
     output.push_str("int main() {\n");
@@ -341,9 +341,9 @@ fn binary_search_bp() -> String {
     output.push_str("    ");
     output.push_str("int arr[5] = { -2, 1, 4, 17, 90 };\n\n");
     output.push_str("    ");
-    output.push_str("int res = binary_search(arr, 5, 90);\n\n");
+    output.push_str("int res = binary_search(arr, 0, 5, 90);\n\n");
     output.push_str("    ");
-    output.push_str("if (res != -4) {\n");
+    output.push_str("if (res != 4) {\n");
     output.push_str("    ");
     output.push_str("    ");
     output.push_str(
@@ -352,7 +352,7 @@ fn binary_search_bp() -> String {
     output.push_str("\n        return 1;");
     output.push_str("\n    }\n");
     output.push_str(
-        "    printf(\"\\033[01;32mTest Passed: \\033[0mArray sorted!\");",
+        "    printf(\"\\033[01;32mTest Passed: \\033[0mElement Found!\");",
     );
     output.push_str("\n    return 0;\n");
     output.push_str("}");
