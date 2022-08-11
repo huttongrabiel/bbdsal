@@ -21,7 +21,7 @@ pub fn generate_practice_files(
         Err(e) => panic!("{e}"),
     };
 
-    create_practice_files(&topics, sub_dir)
+    create_practice_files(topics, sub_dir)
 }
 
 fn create_practice_dir() -> Result<String, &'static str> {
@@ -35,7 +35,7 @@ fn create_practice_dir() -> Result<String, &'static str> {
 
     match fs::create_dir(&path) {
         Ok(_) => Ok(path),
-        Err(_) => return Err("Failed to create dir"),
+        Err(_) => Err("Failed to create dir"),
     }
 }
 
@@ -51,7 +51,7 @@ fn create_practice_sub_dir(
 
     match fs::create_dir(&path) {
         Ok(_) => Ok(path),
-        Err(_) => return Err("Could not create practice subdirectory."),
+        Err(_) => Err("Could not create practice subdirectory."),
     }
 }
 
@@ -89,7 +89,7 @@ fn history_file_number() -> u32 {
         .filter(|line| line.parse::<u32>().is_ok())
         .collect();
 
-    let number = number.get(0).unwrap().parse::<u32>().unwrap();
+    let number = number.first().unwrap().parse::<u32>().unwrap();
 
     number
 }

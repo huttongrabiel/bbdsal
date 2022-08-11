@@ -18,8 +18,8 @@ pub fn generate_boiler_plate(topic: &DSATopic) -> String {
         DSATopic::InOrderTreeTraversal => inorder_tree_traversal_bp(),
         DSATopic::PreOrderTreeTraversal => preorder_tree_traversal_bp(),
         DSATopic::PostOrderTreeTraversal => postorder_tree_traversal_bp(),
-        DSATopic::BFS => bfs_bp(),
-        DSATopic::DFS => dfs_bp(),
+        DSATopic::Bfs => bfs_bp(),
+        DSATopic::Dfs => dfs_bp(),
         DSATopic::QuickSort => quick_sort_bp(),
         DSATopic::MergeSort => merge_sort_bp(),
         DSATopic::InsertionSort => insertion_sort_bp(),
@@ -355,7 +355,7 @@ fn binary_search_bp() -> String {
         "    printf(\"\\033[01;32mTest Passed: \\033[0mElement Found!\");",
     );
     output.push_str("\n    return 0;\n");
-    output.push_str("}");
+    output.push('}');
 
     output
 }

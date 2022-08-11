@@ -7,7 +7,7 @@ use rand::Rng;
 // Update this as you add more DSA topics to DSATopics
 pub const TOPIC_COUNT: u32 = 19;
 
-#[derive(PartialEq, Debug)]
+#[derive(Eq, PartialEq, Debug)]
 pub enum DSATopic {
     // Each enum holds the boiler plate code in its String.
     LinkedList,
@@ -18,8 +18,8 @@ pub enum DSATopic {
     InOrderTreeTraversal,
     PreOrderTreeTraversal,
     PostOrderTreeTraversal,
-    BFS,
-    DFS,
+    Bfs,
+    Dfs,
     QuickSort,
     MergeSort,
     InsertionSort,
@@ -48,8 +48,8 @@ impl Distribution<DSATopic> for Standard {
             6 => DSATopic::InOrderTreeTraversal,
             7 => DSATopic::PreOrderTreeTraversal,
             8 => DSATopic::PostOrderTreeTraversal,
-            9 => DSATopic::BFS,
-            10 => DSATopic::DFS,
+            9 => DSATopic::Bfs,
+            10 => DSATopic::Dfs,
             11 => DSATopic::QuickSort,
             12 => DSATopic::MergeSort,
             13 => DSATopic::InsertionSort,
